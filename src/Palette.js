@@ -4,11 +4,20 @@ import ColorBox from './ColorBox'
 import uuidv4 from 'uuid/v4'
 
 class Palette extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      colors: this.props.colors.map(color => {
+        const id = uuidv4();
+        return { ...color, id }
+      })
+    }
+  }
   renderColors () {
-    return this.props.colors.map(color => <ColorBox key={uuidv4()} color={color} /> )
+    return this.state.colors.map(color => <ColorBox key={color.id} color={color} id={color.id} />)
   }
   render () {
-    console.log(this.props.colors)
+    console.log(this.state.colors)
     return (
       <div className='Palette'>
         <div className='Palette-colors'>

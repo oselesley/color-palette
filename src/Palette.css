@@ -1,8 +1,9 @@
 .Palette {
   height: 100vh;
   width: 100vw;
-  margin-top: -0.45rem;
-  margin-left: -0.45rem;
+  overflow: hidden;
+  /* margin-top: -0.45rem;
+  margin-left: -0.45rem; */
 }
 
 .Palette-colors {
