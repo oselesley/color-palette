@@ -1,30 +1,34 @@
 import './Palette.css'
 import React from 'react'
 import ColorBox from './ColorBox'
-import uuidv4 from 'uuid/v4'
+import Slider from 'rc-slider'
+import "rc-slider/assets/index.css";
 
 class Palette extends React.Component {
   constructor (props) {
-    super(props)
+    super(props);
     this.state = {
-      colors: this.props.colors.map(color => {
-        const id = uuidv4();
-        return { ...color, id }
-      })
-    }
+      level: 700
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange (level) {
+    this.setState({ level });
   }
   renderColors () {
-    return this.state.colors.map(color => <ColorBox key={color.id} color={color} id={color.id} />)
+    return this.props.colors[this.state.level].map(color => (
+      <ColorBox key={color.id} color={color} id={color.id} />
+    ));
   }
+
   render () {
-    console.log(this.state.colors)
     return (
-      <div className='Palette'>
-        <div className='Palette-colors'>
-          {this.renderColors()}
-        </div>
+      <div className="Palette">
+        <label>Level: {this.state.level} </label>
+        <Slider defaultValue={this.state.level} min={100} max={900} step={100} onAfterChange={this.handleChange} />
+        <div className="Palette-colors">{this.renderColors()}</div>
       </div>
-    )
+    );
   }
 }
 
