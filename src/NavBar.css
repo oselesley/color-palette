@@ -1,0 +1,19 @@
+.NavBar {
+  background-color: #fff;
+  height: 7vh;
+  display: flex;
+}
+.logo {
+  background-color: #ddd;
+  font-family: 'Quattrocento Sans', sans-serif;
+  text-transform: lowercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  margin-right: 3rem;
+}
+.slider {
+  position: relative;
+  height: 100%;
+  top: 0.3rem;
+}

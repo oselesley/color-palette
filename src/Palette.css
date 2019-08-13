@@ -1,5 +1,5 @@
 .Palette {
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   overflow: hidden;
   /* margin-top: -0.45rem;
@@ -8,4 +8,31 @@
 
 .Palette-colors {
   height: 90%;
+}
+
+.slider {
+  display: flex;
+  width: 60vh;
+  height: 5vh;
+}
+label {
+  width: 7rem;
+}
+
+.rc-slider-track {
+  background-color: transparent;
+}
+.rc-slider-rail {
+  height: 8px;
+}
+.rc-slider-handle:focus,
+.rc-slider-handle:active,
+.rc-slider-handle:hover,
+.rc-slider-handle {
+  background-color: green;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid green;
+  position: absolute !important;
+  top: 0.45rem;
 }
