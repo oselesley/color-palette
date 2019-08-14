@@ -52,7 +52,7 @@ export default function generatePalette (starterPalette) {
         rgba: chroma(scale[i])
           .css()
           .replace('rgb', 'rgba')
-          .replace(")", "1.0)")
+          .replace(")", ", 1.0)")
       });
     }
   }

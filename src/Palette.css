@@ -2,37 +2,31 @@
   height: 95vh;
   width: 100vw;
   overflow: hidden;
-  /* margin-top: -0.45rem;
-  margin-left: -0.45rem; */
 }
 
 .Palette-colors {
   height: 90%;
 }
 
-.slider {
-  display: flex;
-  width: 60vh;
-  height: 5vh;
-}
-label {
-  width: 7rem;
+div.snack-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: snackBarTransition 0.5s ease-in-out 0 1 forwards;
 }
 
-.rc-slider-track {
-  background-color: transparent;
-}
-.rc-slider-rail {
-  height: 8px;
-}
-.rc-slider-handle:focus,
-.rc-slider-handle:active,
-.rc-slider-handle:hover,
-.rc-slider-handle {
-  background-color: green;
-  outline: none;
-  box-shadow: none;
-  border: 1px solid green;
-  position: absolute !important;
-  top: 0.45rem;
+/* @keyframes snackBarTransition {
+  0%, 20% {
+    bottom: -10rem;
+  }
+  40% {
+    top: 20rem;
+  }
+  100% {
+    bottom: 0;
+  }
+} */
+
+.container {
+  height: 100vh;
 }

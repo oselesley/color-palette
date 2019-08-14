@@ -2,6 +2,8 @@
   background-color: #fff;
   height: 7vh;
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .logo {
   background-color: #ddd;
@@ -10,10 +12,43 @@
   font-weight: 700;
   font-size: 1.3rem;
   padding: 0.5rem;
-  margin-right: 3rem;
+  /* margin-right: 3%; */
 }
 .slider {
+  display: flex;
+  width: 30%;
+  height: 5vh;
   position: relative;
   height: 100%;
-  top: 0.3rem;
+  top: 0.7rem;
 }
+label {
+  width: 40%;
+  font-weight: 600;
+  font-family: 'Quattrocento Sans', sans-serif;
+  text-transform: uppercase
+}
+
+.rc-slider-track {
+  background-color: transparent;
+}
+.rc-slider-rail {
+  height: 8px;
+}
+.rc-slider-handle:focus,
+.rc-slider-handle:active,
+.rc-slider-handle:hover,
+.rc-slider-handle {
+  background-color: green;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid green;
+  position: absolute !important;
+  top: 0.45rem;
+}
+.select {
+  position: relative;
+  width: 30%;
+}
+
+
