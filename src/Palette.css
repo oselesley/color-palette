@@ -1,32 +1,29 @@
 .Palette {
-  height: 95vh;
+  height: 100%;
   width: 100vw;
   overflow: hidden;
 }
 
 .Palette-colors {
-  height: 90%;
+  height: 85%;
 }
-
-div.snack-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  animation: snackBarTransition 0.5s ease-in-out 0 1 forwards;
-}
-
-/* @keyframes snackBarTransition {
-  0%, 20% {
-    bottom: -10rem;
-  }
-  40% {
-    top: 20rem;
-  }
-  100% {
-    bottom: 0;
-  }
-} */
 
 .container {
   height: 100vh;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  height: 10%;
+  background-color: #fff;
+  align-items: center;
+  /* justify-content: flex-end; */
+}
+footer span {
+  margin-left: auto;
+  margin-right: 0.5rem;
+  height: 5vh;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-weight: 700;
 }

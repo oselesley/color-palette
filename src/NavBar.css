@@ -1,8 +1,8 @@
 .NavBar {
   background-color: #fff;
-  height: 7vh;
+  height: 7%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 100%;
 }
 .logo {
@@ -12,6 +12,8 @@
   font-weight: 700;
   font-size: 1.3rem;
   padding: 0.5rem;
+  text-decoration: none;
+  color: #222;
   /* margin-right: 3%; */
 }
 .slider {
@@ -21,6 +23,7 @@
   position: relative;
   height: 100%;
   top: 0.7rem;
+  margin-left: auto;
 }
 label {
   width: 40%;
@@ -48,7 +51,8 @@ label {
 }
 .select {
   position: relative;
-  width: 30%;
+  /* width: 30%; */
+  margin-left: auto;
 }
 
 

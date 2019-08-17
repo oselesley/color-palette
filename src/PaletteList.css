@@ -1,0 +1,23 @@
+.PaletteList {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: #3f3abf;
+
+}
+
+.PaletteList-container {
+  width: 70%;
+  height: 70%;
+  margin: auto auto;
+  padding-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.Palette-item {
+  width: 30%;
+  transform: scale(0.9)
+}

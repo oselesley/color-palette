@@ -4,13 +4,14 @@ import React from 'react'
 import MenuItem from "@material-ui/core/MenuItem";
 import Slider from "rc-slider";
 import Select from '@material-ui/core/Select';
+import { NavLink } from 'react-router-dom'
 
 class NavBar extends React.Component {
   render () {
     const { format, changeFormat } = this.props
     return (
       <div className="NavBar">
-        <div className="logo">reactColorPicker</div>
+        <NavLink to='/' activeClassName="logo">reactColorPicker</NavLink>
         <div className="slider">
           <label>Level: {this.props.level} </label>
           <Slider
