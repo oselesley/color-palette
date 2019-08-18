@@ -2,6 +2,7 @@ import './ColorBox.css'
 import React from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { NavLink, withRouter } from 'react-router-dom'
+import chroma from 'chroma-js'
 
 class ColorBox extends React.Component {
   constructor () {
@@ -26,6 +27,9 @@ class ColorBox extends React.Component {
     const { paletteID } = this.props
     const height = type && '50%'
     const width = type && '20%'
+    const top = type ? '45%' : '35%'
+    const darkBackground = chroma(format).luminance() <= 0.5
+
     return (
       <CopyToClipboard text={format}>
         <div
@@ -35,28 +39,43 @@ class ColorBox extends React.Component {
               ? { backgroundColor: `${format}` }
               : { backgroundColor: `${format}`, height, width }
           }
-          onClick={id === "return" ? this.goBack : this.handleCopy}
+          onClick={id === 'return' ? this.goBack : this.handleCopy}
         >
           <div
-            className={`copy-overlay ${this.state.copied ? "show" : ""}`}
+            className={`copy-overlay ${this.state.copied ? 'show' : ''}`}
             style={{ backgroundColor: `${format}` }}
           />
-          <div className={`copy-msg ${this.state.copied ? "show" : ""}`}>
-            <div className="copy-text">
+          <div className={`copy-msg ${this.state.copied ? 'show' : ''}`}>
+            <div className={`copy-text ${
+              darkBackground ? 'light-text' : 'dark-text'
+            }`}>
               <h1>Copied!</h1>
               <p>{format}</p>
             </div>
           </div>
-          <div className="color-box-content">
-            <div className="copy">
-              {id !== "return" ? "COPY" : "Go BACK"}
+          <div className='color-box-content'>
+            <div
+              className={`copy ${id === 'return' && 'back'} ${
+                darkBackground ? 'light-text' : 'dark-text'
+              }`}
+              style={{ top }}
+            >
+              {id !== 'return' ? 'COPY' : 'Go BACK'}
             </div>
-            <div className="color-box-footer">
-              <span className="name">{name || colorName}</span>
-              {type !== "singlePalette" && (
+            <div className='color-box-footer'>
+              <span
+                className={`name ${
+                  darkBackground ? 'light-text' : 'dark-text'
+                }`}
+              >
+                {name || colorName}{' '}
+              </span>
+              {type !== 'singlePalette' && (
                 <NavLink
                   to={`/palette/${paletteID}/${id}`}
-                  className="more"
+                  className={`more ${
+                    darkBackground ? 'light-text' : 'dark-text'
+                  }`}
                 >
                   MORE
                 </NavLink>
@@ -65,7 +84,7 @@ class ColorBox extends React.Component {
           </div>
         </div>
       </CopyToClipboard>
-    );
+    )
   }
 }
 
