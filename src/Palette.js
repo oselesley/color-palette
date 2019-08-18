@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import IconButton from "@material-ui/core/IconButton";
 import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close'
+import Footer from './Footer'
 
 class Palette extends React.Component {
   constructor (props) {
@@ -38,7 +39,7 @@ class Palette extends React.Component {
   renderColors () {
     console.log(this.props)
     return this.props.colors[this.state.level].map(color => (
-      <ColorBox key={color.id} color={color} id={color.id} format={this.state.format} paletteID={this.props.id} />
+      <ColorBox key={color.id} {...color} id={color.id} format={this.state.format} paletteID={this.props.id} />
     ));
   }
 
@@ -55,13 +56,7 @@ class Palette extends React.Component {
             format={this.state.format}
           />
           <div className="Palette-colors">{this.renderColors()}</div>
-            <footer>
-          <span>
-            {this.props.paletteName}
-            <i className={`em em-flag-${this.props.emoji.toLowerCase()}`} />
-            <i className="em em-flag-au" />
-          </span>
-        </footer>
+          <Footer paletteName={this.props.paletteName} emoji={this.props.emoji} />
         </div>
         <Snackbar
           anchorOrigin={{

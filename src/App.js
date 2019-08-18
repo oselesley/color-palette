@@ -39,7 +39,18 @@ class App extends React.Component {
                 />
               )}
             />
-            <Route path='/palette/:paletteID/:id' render={(routeProps) => <SinglePalette {...routeProps} />} />
+            <Route
+              path="/palette/:paletteID/:id"
+              exact
+              render={routeProps => (
+                <SinglePalette
+                  {...routeProps}
+                  {...this.palette.find(
+                    palette => palette.id === routeProps.match.params.paletteID
+                  )}
+                />
+              )}
+            />
           </Switch>
         </BrowserRouter>
       </div>

@@ -12,7 +12,7 @@ class NavBar extends React.Component {
     return (
       <div className="NavBar">
         <NavLink to='/' activeClassName="logo">reactColorPicker</NavLink>
-        <div className="slider">
+        {this.props.type !== 'singlePalette' && <div className="slider">
           <label>Level: {this.props.level} </label>
           <Slider
             defaultValue={this.props.level}
@@ -21,7 +21,7 @@ class NavBar extends React.Component {
             step={100}
             onAfterChange={this.props.changeLevel}
           />
-        </div>
+        </div>}
         <div className="select">
           <Select
             value={format}
