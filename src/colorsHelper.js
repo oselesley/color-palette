@@ -46,7 +46,7 @@ export default function generatePalette (starterPalette) {
     for (let i in scale) {
       newPalette.colors[levels[i]].push({
         name: `${color.name} ${levels[i]}`,
-        id: color.name.split(" ").join("-"),
+        id: color.name,
         hex: scale[i],
         rgb: chroma(scale[i]).css(),
         rgba: chroma(scale[i])

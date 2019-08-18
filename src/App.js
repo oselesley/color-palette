@@ -5,11 +5,16 @@ import seedColors from './seedColors'
 import generatePalette from './colorsHelper'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import PaletteList from './PaletteList'
+import SinglePalette from './SinglePalette'
 
 class App extends React.Component {
   constructor (props) {
     super(props)
     this.palette = seedColors.map(color => generatePalette(color))
+    const palette = this.palette.find(
+      palette => palette.id === "flat-ui-colors-v1"
+    );
+    console.log(palette)
   }
   render () {
     console.log('in render')
@@ -34,6 +39,7 @@ class App extends React.Component {
                 />
               )}
             />
+            <Route path='/palette/:paletteID/:id' render={(routeProps) => <SinglePalette {...routeProps} />} />
           </Switch>
         </BrowserRouter>
       </div>

@@ -36,8 +36,9 @@ class Palette extends React.Component {
     this.setState({ format: this.props.formats[e.target.value], open: true })
   }
   renderColors () {
+    console.log(this.props)
     return this.props.colors[this.state.level].map(color => (
-      <ColorBox key={color.id} color={color} id={color.id} format={this.state.format} />
+      <ColorBox key={color.id} color={color} id={color.id} format={this.state.format} paletteID={this.props.id} />
     ));
   }
 

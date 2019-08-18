@@ -1,6 +1,7 @@
 import './ColorBox.css'
 import React from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { NavLink } from 'react-router-dom'
 
 class ColorBox extends React.Component {
   constructor () {
@@ -16,6 +17,7 @@ class ColorBox extends React.Component {
   render () {
     const { name } = this.props.color
     const format = this.props.color[this.props.format]
+    const { id, paletteID } = this.props
     return (
       <CopyToClipboard text={format}>
         <div
@@ -37,7 +39,7 @@ class ColorBox extends React.Component {
             <div className="copy">Copy</div>
             <div className="color-box-footer">
               <span className="name">{name}</span>
-              <span className="more">MORE</span>
+              <NavLink to={`/palette/${paletteID}/${id}`} className="more">MORE</NavLink>
             </div>
           </div>
         </div>
